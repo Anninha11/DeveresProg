@@ -1,5 +1,4 @@
 #Dever para o dia 30/05
-!pip install streamlit
 import streamlit as st
 import pandas as pd
 
