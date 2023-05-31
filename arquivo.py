@@ -1,16 +1,9 @@
-import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
-def main():
-    st.title("Visualização de arquivo CSV")
-    file = st.file_uploader("ingrediente de comidas e alergias.csv")
-    if file is not None:
-        df = pd.read_csv(file)
-        st.write(df)
-if __name__ == "__main__":
-    main()
-data = pd.read_csv('ingrediente de comidas e alergias.csv')
-category_counts = data[['Food Product', 'Main Ingredient', 'Sweetener', 'Fat/Oil', 'Seasoning', 'Allergens', 'Prediction']].apply(pd.Series.value_counts)
-plt.figure(figsize=(10, 6))
-category_counts.plot(kind='bar', subplots=True, layout=(4, 2), figsize=(10, 10), legend=False)
-st.pyplot(plt)
+st.title("Análise de Arquivo CSV")
+csv_file = st.file_uploader("Selecione o arquivo CSV", type=["csv"])
+if csv_file is not None:
+    data = pd.read_csv(csv_file)
+    st.write(data)
+else:
+    st.write("Nenhum arquivo selecionado.")
