@@ -1,4 +1,3 @@
-install matplotlib.pyplot
 install streamlit
 install pandas
 install matplotlib
